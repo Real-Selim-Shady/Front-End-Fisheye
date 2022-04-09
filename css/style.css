@@ -2,7 +2,9 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1450px;
 }
 
 
@@ -21,7 +23,6 @@ h1 {
 
 .logo {
     height: 50px;
-    margin-left: 100px;
 }
 
 .photographer_section {
@@ -40,11 +41,65 @@ h1 {
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
+    /*color: #D3573C;
+    font-size: 36px;*/
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
     font-size: 36px;
+    line-height: 1px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #D3573C;
+}
+
+.photographer_section article .localisation {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #901C1C;
+}
+
+
+.photographer_section article .tagline {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 1px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #000000;
+}
+
+.photographer_section article .prix {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 1px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #757575;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
 }
+
+

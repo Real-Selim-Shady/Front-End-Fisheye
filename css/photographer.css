@@ -2,10 +2,34 @@
     display: none;
 }
 
+header {
+    position:relative;
+}
+
+main {
+    position:relative;
+}
+
+button {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+
+.photograph-header1 {
+    display: flex;
+    order: 1;
+    margin-left: 2%;
 }
 
 .contact_button {
@@ -13,29 +37,129 @@
     font-weight: bold;
     color: white;
     padding: 11px;
-    width: 170px;
-    height: 70px;
+    width: 160px;
+    height: 60px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 2;
 }
+
+.contact_button:hover {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 11px;
+    width: 160px;
+    height: 60px;
+    border: none;
+    background-color: #DB8876;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 2;
+}
+
+.photograph-header3 {
+    display: flex;
+    order: 3;
+    margin-right: 2%;
+}
+
+.infoPhotograph article {
+    display: block;
+    margin-top: 25%;
+}
+
+.picPhotograph {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.picPhotograph article {
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.infoPhotograph article h2 {
+    /*color: #D3573C;
+    font-size: 36px;*/
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #D3573C;
+}
+
+.infoPhotograph article .localisation {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #901C1C;
+}
+
+.infoPhotograph article .tagline {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #000000;
+}
+
+.picPhotograph article img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/*Debut Modal*/
+
+
 
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    position: absolute;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    width: 40%;
+    margin-left: 30%;
 }
 
 .modal header {
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 5%;
 }
 
 .modal header img {
@@ -73,4 +197,378 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 27px;
+}
+
+
+.inputMessage {
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 27px;
+    width: 100%;
+}
+
+
+
+
+/*Fin Modal*/
+
+/*triage des images*/
+
+
+.flexTri {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+/* ///  END DECORATION CSS  ///  */
+svg {
+    fill: #ffffff;
+  }
+  .icon_select_mate {
+    position: absolute;
+    top: 20px;
+    right: 2%;
+    font-size: 16px;
+    height: 22px;
+    transition: all 275ms;
+  }
+  .select_mate {
+    position: relative;
+    float: left;
+    width: 200px;
+    min-height: 60px;
+    color: #ffffff;
+    font-weight: 300;
+    background-color: #901C1C;
+    box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    transition: all 375ms ease-in-out;
+    margin-left: 10px;
+    padding-inline: 8px;
+    /* Oculto el elemento select */
+  }
+  .select_mate select {
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .cont_list_select_mate {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .cont_select_int {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    overflow: hidden;
+    height: 0px;
+    width: 100%;
+    background-color: #901C1C;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 0px 0px 3px 3px;
+    box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
+    transition: all 375ms ease-in-out;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-inline: 8px;
+    margin-left: -8px;
+    margin-top: -3px;
+  }
+  .cont_select_int li {
+    position: relative;
+    float: left;
+    width: 96%;
+    border-top: 1px solid #ffffff;
+    background-color: #901C1C;
+    list-style-type: none;
+    padding: 10px 2%;
+    margin: 0px;
+    transition: all 275ms ease-in-out;
+    display: block;
+    cursor: pointer;
+  }
+  .cont_select_int li:last-child {
+    border-bottom: 0px;
+  }
+  .cont_select_int li:hover {
+    background-color: #eeeeee;
+  }
+  .cont_select_int .active {
+    background-color: #eeeeee;
+    display: none;
+  }
+  /* etiqueta <p> con la opcion selecionada  */
+  .selecionado_opcion {
+    padding: 20px 2%;
+    width: 96%;
+    display: block;
+    margin: 0px;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+/*Section Photos des photographes*/
+
+.photographersPicsFlex {
+    display: flex;
+    margin-top: 25px;
+    z-index: 2;
+}
+
+.photograph-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.photograph-pictures article {
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: block;
+    width: 400px;
+    margin-top: 2%;
+}
+
+.photograph-pictures article img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photograph-pictures article video {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.zoomMedia {
+    width:100%;
+    max-width:300px;
+}
+
+.flexPicsInfo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 6px;
+}
+
+.titlePics {
+    display: flex;
+    width: 89%;
+    color: #901C1C;
+}
+
+.likesPics {
+    display: flex;
+    color: #901C1C;
+    font-weight: bold;
+}
+
+.heartPics {
+    display: flex;
+    width: 7%;
+    color: #901C1C;
+    font-size: 16px;;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.mediaContainer {
+    display: flex;
+}
+
+
+/*modale image gallery*/
+
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+#myImg:hover {opacity: 0.7;}
+  
+/* The Modal (background) */
+.modal-img {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white;
+}
+  
+/* Modal Content (Image) */
+.modal-content {
+    display: block;
+    max-width: 510px;
+}
+
+.flexMediaClose {
+    order:2;
+    display: flex;
+}
+
+.flexDuMediaEtCroix {
+    display: flex;
+    flex-direction: column;
+}
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    color: #901C1C;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 26px;
+
+
+}
+  
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+  
+/* The Close Button */
+.close {
+    /*position: absolute;
+    color: #901C1C;
+    font-size: 110px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 37%;
+    margin-top: -4%;*/
+    color: #901C1C;
+    font-size: 110px;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 0;
+    order: 5;
+    position: fixed;
+    margin-left: 562px;
+    top: 68px;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+
+.flecheGauche {
+    order:1;
+}
+
+
+
+.before {
+    font-size: 60px;
+    color: #901C1C;
+    margin-left: auto;
+    margin-left: -60%;
+    cursor: pointer;
+}
+
+.next {
+    font-size: 60px;
+    color: #901C1C;
+    margin-right: auto;
+    margin-left: 60%;
+    cursor: pointer;
+}
+
+
+.flecheDroite {
+    order: 3;
+}
+
+
+.flexModalContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*Petit bloc en bas à droite*/
+
+.blocLikesPrice {
+    display: flex;
+    position: fixed;
+    width: 250px;
+    height: 50px;
+    background-color: #DB8876;
+    right: 40px;
+    bottom: 0px;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.blocLikes {
+    position: relative;
+    font-size: 20px;
+    color: #000000;
+    margin-left: 7%;
+    font-weight: bold;
+}
+
+.heartAll {
+
+    height: 20px;
+    color: #000000;
+    padding-left: 5px;
+    width: 10%;
+}
+
+.pricePhotographerPage {
+    font-size: 20px;
+    color: #000000;
+    margin-left: 50%;
+    font-weight: bold;
 }

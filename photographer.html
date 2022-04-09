@@ -1,36 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang = "fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
+    <script src="https://kit.fontawesome.com/0d91ecef93.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo FishEye, retour à la page d'accueil"/></a>
     </header>
-    <main id="main">
-      <div class="photograph-header">
+    <main id="main" onkeydown="handleKey(event)">
+      <section class="photograph-header">
+        <div class="photograph-header1"><div class="infoPhotograph"></div></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
+        <div class="photograph-header3"><div class="picPhotograph"></div></div>
+      </section>
+      <section id="contact_modal" class="modal">
+
+        <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <button aria-details="Fermer le formulaire de contact"><img src="assets/icons/close.svg" alt="fermeture du formulaire" onclick="closeModal()" /></button>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        <form
+          id="incription"
+          name="reserve"
+          action="index.html"
+          method="get"
+          novalidate>
+          <!--onsubmit= "return false"  -->
+          <!--action="index.html"  -->
+
+          <div
+            class="formData">
+            <label for="first">Prénom</label><br>
+            <input
+              class="text-control"
+              type="text"
+              id="first"
+              name="first"
+              minlength="2"
+              required
+              maxlength="20"
+            />
+            <span id="prenom_manquant" class="error"></span>
+            <br>
+          </div>
+
+
+          <div class="formData">
+            <label for="last">Nom</label><br>
+            <input
+              class="text-control"
+              type="text"
+              id="last"
+              name="last"
+              required
+              maxlength="20"
+            />
+            <span id="nom_manquant" class="error"></span>
+            <br>
+          </div>
+
+
+          <div class="formData">
+            <label for="email">E-mail</label><br>
+            <input
+              class="text-control"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+            <span id="email_manquant" class="error"></span>
+            <br>
+          </div>
+
+
+          <div class="formData">
+            <label for="text">Votre message</label><br>
+            <textarea
+              class="inputMessage"
+              type="text"
+              id="text"
+              name="text"
+              required
+            >
+            </textarea>
+            <span id="text_manquant" class="error"></span>
+            <br>
+          </div>
+
+          <button
+          class="contact_button"
+          type="button"
+          value="submit"
+          id="bouton_envoi"
+          onclick="send()"
+          >Envoyer</button>
+
+        </form>
+
+      </section>
+      <nav class = "flexTri">
+        <p>Trier par</p>      
+
+        <!-- Custom select structure --> 
+        <div class="select_mate" data-mate-select="active">
+          <select title ="sélection du tri" class="select_mate" name="" onchange="sortMedias(this)" id="" style="display:none">
+            <option title="tri par date" value="date" >Date</option>
+            <option title="tri par popularité" value="like">Popularité</option>
+            <option title="tri partitre" value="title">Titre</option>
+          </select>
+          <p title="option sélectionnée" class="selecionado_opcion"  onclick="open_select(this)" ></p>
+          <button aria-label="Sélection du type de tri" onclick="open_select(this)" class="icon_select_mate" >
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+              <path d="M0-.75h24v24H0z" fill="none"/>
+            </svg>
+          </button>
+          <div class="cont_list_select_mate">
+            <ul class="cont_select_int">  </ul> 
+          </div>
+        </div>
+        <!-- Custom select structure --> 
+  
+  
+    
+        
+
+
+      </nav>
+
+        
+      <section class="section-photos">
+        <div class="photographersPicsFlex">
+          <div class="photograph-pictures">
+          </div>
+        </div>
+        <div class="containerID"></div>
+
+
+        <!-- Trigger the Modal -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal-img">
+
+          <!-- The Close Button -->
+          <!-- <span class="close" onclick="closeMediaModal()">&times;</span> -->
+
+          <!-- Modal Content (The Image) -->
+          <div class="flexModalContent">
+            <button aria-label="flèche vers le media précédent" class="flecheGauche" id="fleche-before" onclick="flecheGauche()"><div class="before"><span class="fa-solid fa-chevron-left"></span></a></div></button>
+            <div class="flexMediaClose">
+              <div class="flexDuMediaEtCroix">
+                <img class="modal-content" id="img01" display="none" alt="media Image"></img>
+                <video class="modal-content" id="video01" controls type="video/mp4" display="none" alt="media Video"></video>
+                <div id="caption"></div>
+              </div>
+            </div>
+            <button aria-label="flèche vers le media suivant" class="flecheDroite" id="fleche-next" onclick="flecheDroite()"><div class="next"><span class="fa-solid fa-chevron-right"></span></div></button>
+            <button aria-label="fermeture de la gallerie de médias" class="close" onclick="closeMediaModal()">&times;</button>
+          </div>
+
+
+          <!-- Modal Caption (Image Text) -->
+
+        </div>
+
+
+      </section>
+      <aside class="blocLikesPrice">
+        <div id = "totalLikes" class="blocLikes"></div>
+        <div class="heartAll"><span class="fa-solid fa-heart"></span></div>
+      </aside>
+    </main>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/factories/Photographer.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+
   </body>
 </html>
