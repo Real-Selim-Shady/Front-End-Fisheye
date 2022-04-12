@@ -18,6 +18,7 @@ let first = document.querySelector("#first");
 let last = document.querySelector("#last");
 let email = document.querySelector("#email");
 let text = document.querySelector("#text");
+
 // eslint-disable-next-line no-unused-vars
 function send() {
     console.log(first.value);

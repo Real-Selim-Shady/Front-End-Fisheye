@@ -13,7 +13,7 @@ let data = [];
 
 
 function photographerFactory(data) {
-    var { name, portrait, city, country, tagline, price, id, photographerId, image, likes, title, video } = data;
+    let { name, portrait, city, country, tagline, price, id, photographerId, image, likes, title, video } = data;
 
     picture = `assets/photographers/${portrait}`;
 
@@ -116,9 +116,9 @@ function photographerFactory(data) {
             pic1.setAttribute("src", pictures);
             pic1.id = "myImg";
             pic1.alt = title;
-            mediaContainer.appendChild(pic1);} else if (data.video) {
+            mediaContainer.appendChild(pic1);} 
+        else if (data.video) {
             const vid1 = document.createElement( "video" );
-            vid1.controls = true;
             vid1.className = "video";
             vid1.id = "myImg";
             vid1.alt = title;
@@ -130,7 +130,7 @@ function photographerFactory(data) {
                         
         }
 
-        var flexPicsInfo = document.createElement("div");
+        let flexPicsInfo = document.createElement("div");
         flexPicsInfo.className = "flexPicsInfo";
         article4.appendChild(flexPicsInfo);
 
@@ -140,7 +140,7 @@ function photographerFactory(data) {
         flexPicsInfo.appendChild(title1);
 
 
-        var likes1 = document.createElement("p");
+        let likes1 = document.createElement("p");
         likes1.innerText = likes.toString();
         likes1.className = "likesPics";
         flexPicsInfo.appendChild(likes1);
@@ -184,7 +184,7 @@ function photographerFactory(data) {
             let index = medias.indexOf(data);
             mediaIndex = index;
 
-            var modal = document.getElementById("myModal");
+            let modal = document.getElementById("myModal");
             modal.style.display = "block";
             document.getElementById("fleche-before").focus();
 
@@ -220,7 +220,7 @@ function photographerFactory(data) {
 //fonction permettant de fermer la modale de gallerie d"image
 function closeMediaModal () {
 
-    var modal = document.getElementById("myModal");
+    let modal = document.getElementById("myModal");
     modal.style.display = "none";
 
 }
@@ -228,14 +228,14 @@ function closeMediaModal () {
 //fonction permettant d"afficher le médias sélectionné dans une gallerie d"image (et vidéo)
 function displayCurrentMedia (data) {
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    //var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var modalVideo = document.getElementById("video01");
-    var captionText = document.getElementById("caption");
+    //let img = document.getElementById("myImg");
+    let modalImg = document.getElementById("img01");
+    let modalVideo = document.getElementById("video01");
+    let captionText = document.getElementById("caption");
 
 
 
-    var { photographerId, image, title, video } = data;
+    let { photographerId, image, title, video } = data;
 
     pictures = `assets/images/${photographerId}/${image}`;
 

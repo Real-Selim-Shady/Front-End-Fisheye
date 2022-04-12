@@ -108,7 +108,7 @@ button {
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1px;
     /* identical to box height */
     
@@ -121,7 +121,7 @@ button {
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
+    font-size: 13px;
     /* identical to box height */
     
     text-align: center;
@@ -379,19 +379,22 @@ svg {
     display: flex;
     width: 89%;
     color: #901C1C;
+    font-size: 22px;
 }
 
 .likesPics {
     display: flex;
     color: #901C1C;
     font-weight: bold;
+    font-size: 20px;
+
 }
 
 .heartPics {
     display: flex;
     width: 7%;
     color: #901C1C;
-    font-size: 16px;;
+    font-size: 20px;;
     background-color: transparent;
     border-color: transparent;
     cursor: pointer;
